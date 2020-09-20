@@ -8,9 +8,7 @@ int main() {
 
 	int index_k = linear_search(vet, k, ARRAY_SIZE);
 
-
 	show_result(index_k, k);
-
 
 	return 0;
 }
@@ -27,9 +25,9 @@ int linear_search(int vet[], int k, int ARRAY_SIZE) {
 
 void show_result(int index_k, int k) {
 	if (index_k != -1){
-		printf("number %d is in index %d", k, index_k);
+		printf("number %d is in index %d\n", k, index_k);
 	}
 	else {
-		printf("number %d does not exist in the vector", k);
+		printf("number %d does not exist in the vector\n", k);
 	}
 } 
