@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<math.h>
 
-int main() {
+int main(int argc, char* argv[]) {
 	const int ARRAY_SIZE = 10;
 	int vet[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 	int k = 2;
@@ -18,23 +18,21 @@ int binary_search(int vet[], int k , int ARRAY_SIZE) {
 	int right = ARRAY_SIZE - 1;
 	int center = right / 2;
 
-	int index = -1;
-
 	while (left <= right) {
+		center = (left + right) / 2;
+
 		if ( k == vet[center] ) {
 			return center;
 		}
 		else if ( k < vet[center] ) {
-			right = center;
-			center = right / 2;
+			right = center - 1;
 		}
 		else {
-			left = center;
-			center = ((right - left) / 2) + left;
+			left = center + 1;
 		}
 	}
 
-	return index;
+	return -1;
 }
 
 void show_result(int index_k, int k) {
